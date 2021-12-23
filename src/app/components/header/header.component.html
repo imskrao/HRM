@@ -1,0 +1,16 @@
+<ng-container *ngIf="isPublic else privateHeader">
+    <header class="header">
+        <div class="header__logo">HRM</div>
+        <nav class="header__nav">
+            <ul class="header__nav__items">
+                <li *ngFor="let item of publicNavItems; trackBy:trackById" (click)="redirectTo(item.url)">
+                    {{item.name}}
+                </li>
+            </ul>
+        </nav>
+    </header>
+</ng-container>
+
+<ng-template #privateHeader>
+    <header>Private Header</header>
+</ng-template>
